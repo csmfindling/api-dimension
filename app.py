@@ -10,15 +10,15 @@ import os
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-db.init_app(app)
-CORS(app)
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+#db.init_app(app)
+#CORS(app)
  
-with app.app_context():
-    install_models()
-    import routes
+#with app.app_context():
+#    install_models()
+#    import routes
  
-@app.route('/testmethod', methods=[])
+@app.route('/testmethod', methods=['GET'])
 def mytest():
     result = dict()
     result['test'] = 'ok'
