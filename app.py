@@ -6,6 +6,7 @@ import os
 from models.db import db
 from models.install import install_models
  
+#to test well functioning : https://dimension.osc-fr1.scalingo.io/testmethod
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
