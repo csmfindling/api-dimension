@@ -12,5 +12,6 @@ pytest==4.0.0
 pytest-flask==0.14.0
 numpy==1.15.4
 pandas==0.23.4
+mysqlclient==1.4.6
 pymysql==0.9.3
 mysql-connector-python==8.0.19
