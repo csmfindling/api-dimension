@@ -18,6 +18,12 @@ with app.app_context():
     install_models()
     import routes
  
+@app.route('/testmethod', methods=[])
+def mytest():
+    result = dict()
+    result['test'] = 'ok'
+    return jsonify(result), 200
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", debug=True, port=port)
+    app.run(host="0.0.0.0", port=port)
