@@ -3,9 +3,8 @@ import subprocess
 from flask_cors import CORS
 from flask import Flask, jsonify, request, abort
 import os
-from models.db import db
-from models.install import install_models
-import os
+#from models.db import db
+#from models.install import install_models
  
 warnings.filterwarnings("ignore")
 
@@ -18,7 +17,7 @@ app = Flask(__name__)
 #    install_models()
 #    import routes
  
-@app.route('/testmethod', methods=['GET'])
+@app.route('/testmethod', methods=['GET', 'POST'])
 def mytest():
     result = dict()
     result['test'] = 'ok'
