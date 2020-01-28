@@ -3,3 +3,4 @@ Flask-Cors==3.0.6
 numpy==1.15.1
 psycopg2==2.7.6.1
 sqlalchemy==1.2.11
+flask_sqlalchemy==2.4.1
