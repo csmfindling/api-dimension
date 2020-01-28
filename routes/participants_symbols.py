@@ -53,7 +53,7 @@ def get_participant_symbols(participant_id, block_number):
             temp_indexes[idx_dim] = numpy.where(indexes_of_features[idx_dim] == all_of_interest[:,idx_dim])[0][0]
         intelligent_index = numpy.where(numpy.sum(numpy.abs(allsymbols_indexes - temp_indexes[numpy.newaxis]), axis=1) == 0)[0][0] + 1
         # app.logger.info(str(intelligent_index))
-        pool_of_symbols[str(intelligent_index)] = path.split('src/')[-1]
+        pool_of_symbols[str(intelligent_index)] = path.split('../')[-1]
 
     # return result
     result                    = dict()
