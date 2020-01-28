@@ -6,7 +6,7 @@ import os
 from models.db import db
 from models.install import install_models
 import os
-
+ 
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
