@@ -8,7 +8,7 @@ import numpy
 import json
 
 @app.route('/test/', methods=['GET'])
-def get_block():
+def test():
     result = dict()
     result['test'] = 'test'
     return jsonify(result), 200
