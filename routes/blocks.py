@@ -7,6 +7,13 @@ from collections import OrderedDict
 import numpy
 import json
 
+@app.route('/test/', methods=['GET'])
+def get_block():
+    result = dict()
+    result['test'] = 'test'
+    return jsonify(result), 200
+
+
 @app.route('/block/<block_id>', methods=['GET'])
 def get_block(block_id):
     query                = Blocks.query.filter_by(id=block_id)
