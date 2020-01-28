@@ -7,10 +7,10 @@ from collections import OrderedDict
 import numpy
 import json
 
-@app.route('/test/', methods=['GET'])
-def test():
+@app.route('/testmethod', methods=[])
+def mytest():
     result = dict()
-    result['test'] = 'test'
+    result['test'] = 'ok'
     return jsonify(result), 200
 
 
