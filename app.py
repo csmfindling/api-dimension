@@ -3,13 +3,13 @@ import subprocess
 from flask_cors import CORS
 from flask import Flask, jsonify, request, abort
 import os
-#from models.db import db
-#from models.install import install_models
+from models.db import db
+from models.install import install_models
  
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 #db.init_app(app)
 #CORS(app)
  
