@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db.init_app(app)
 CORS(app)
-
+ 
 with app.app_context():
     install_models()
     import routes
