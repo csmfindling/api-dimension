@@ -28,7 +28,7 @@ def get_participant_symbols(participant_id, block_number):
         allsymbols_indexes[idx] = int(allsymbols_indexes_raw[idx].get_shape_id()) - 1, int(allsymbols_indexes_raw[idx].get_color_id()) - 1, int(allsymbols_indexes_raw[idx].get_grate_id()) - 1
     
     # regular expression to get first symbols     
-    regex_path_of_symbols = '../images/symbols/symbol_shape_[{0},{1}]_grate_[{2},{3}]_color_[{4},{5}].png'. \
+    regex_path_of_symbols = './images/symbols/symbol_shape_[{0},{1}]_grate_[{2},{3}]_color_[{4},{5}].png'. \
                                                                 format(shapes_of_interest[0], shapes_of_interest[1],  \
                                                                         grates_of_interest[0], grates_of_interest[1], \
                                                                         colors_of_interest[0], colors_of_interest[1])    
