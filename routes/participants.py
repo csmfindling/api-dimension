@@ -50,7 +50,7 @@ def get_participant_score(prolific_id):
     result                  = {}
 
     rewards_over_blocks     = numpy.concatenate([numpy.array(participants_score[i].get_observed_rewards_training()[1:-1].split(',')[-2:], dtype=numpy.float) for i in range(len(participants_score))])
-    result['score']         = str(rewards_over_blocks.mean())
+    result['score']         = str(np.round((rewards_over_blocks.mean() - 40)/20. * 100))[:-2]
 
     return jsonify(result), 200 # json.dumps(result)
 
