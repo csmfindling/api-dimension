@@ -46,11 +46,11 @@ def get_last_participant_id():
 @app.route('/participants/score/<prolific_id>', methods=['GET'])
 def get_participant_score(prolific_id):
     query                   = Participants.query.filter_by(prolific_id=prolific_id)    
-    participants_score      = query.first_or_404()
+    participants_score      = query.all()
     result                  = {}
 
     rewards_over_blocks     = numpy.concatenate([numpy.array(participants_score[i].get_observed_rewards_training()[1:-1].split(',')[-2:], dtype=numpy.float) for i in range(len(participants_score))])
-    result['score']         = str(np.round((rewards_over_blocks.mean() - 40)/20. * 100))[:-2]
+    result['score']         = str(numpy.round((rewards_over_blocks.mean() - 40)/20. * 100))[:-2]
 
     return jsonify(result), 200 # json.dumps(result)
 
