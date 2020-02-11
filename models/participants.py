@@ -25,6 +25,8 @@ class Participants(BaseObject, Model):
     chosen_symbols_testing = Column(VARCHAR(length=200))
     chosen_positions_testing = Column(VARCHAR(length=200))
 
+    date_time  = Column(VARCHAR(length=200))
+
     def get_id(self):
         return str(self.id)
 
@@ -60,6 +62,10 @@ class Participants(BaseObject, Model):
 
     def get_reaction_time_training(self):
         return str(self.reaction_time_training)
+
+    def get_datetime(self):
+        return str(self.date_time)
+
 
     def errors(self):
         errors = super(Participants, self).errors()

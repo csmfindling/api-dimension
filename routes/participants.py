@@ -26,6 +26,7 @@ def create_participant(participant_id, block_id, prolific_id):
     participant.reaction_time_training    = str(content['reaction_times'])
     participant.chosen_symbols_testing    = ''
     participant.chosen_positions_testing  = ''
+    participant.date_time = str(content['date_time'])
 
     BaseObject.check_and_save(participant)
 
