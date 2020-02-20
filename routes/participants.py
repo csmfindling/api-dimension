@@ -36,11 +36,15 @@ def create_participant(participant_id, block_id, prolific_id):
 
 @app.route("/participants/last_participant_id/", methods=["GET"])
 def get_last_participant_id():
-    query  = db.db.session.query(func.max(Participants.participant_id)).first_or_404()
-    if query[0] is not None:
-        result = dict({"new_participant_id": str(int(query[0]) + 1)})
-    else:
-        result = dict({"new_participant_id": str(1)})
+    # query  = db.db.session.query(func.max(Participants.participant_id)).first_or_404()
+    # if query[0] is not None:
+    #     result = dict({"new_participant_id": str(int(query[0]) + 1)})
+    # else:
+    #     result = dict({"new_participant_id": str(1)})
+    #
+    # sample id randomly between 0 and 999
+    # sample the id for the new participant as a random number between 1 and 1000
+    result = dict({"new_participant_id": str(numpy.random.randint(1000) + 1)})
     return jsonify(result)
 
 @app.route("/participants/get_observed_rewards_training/<prolific_id>", methods=["GET"])
