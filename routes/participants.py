@@ -48,7 +48,7 @@ def get_observed_rewards_training(prolific_id):
     query                   = Participants.query.filter_by(prolific_id=prolific_id)    
     participants_score      = query.all()
     result                  = {}
-    rewards_over_blocks     = numpy.concatenate([numpy.array(participants_score[i].get_observed_rewards_training()[1:-1].split(',')[-2:]) for i in range(len(participants_score))])
+    rewards_over_blocks     = numpy.concatenate([numpy.array(participants_score[i].get_observed_rewards_training()[1:-1].replace('\n', '').split(',')[-2:]) for i in range(len(participants_score))])
     result['score']         = str(rewards_over_blocks)
     return jsonify(result)
 
