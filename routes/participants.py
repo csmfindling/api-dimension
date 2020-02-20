@@ -43,8 +43,8 @@ def get_last_participant_id():
         result = dict({"new_participant_id": str(1)})
     return jsonify(result)
 
-@app.route("/get_observed_rewards_training/get_observed_rewards_training/", methods=["GET"])
-def get_last_participant_id():
+@app.route("/participants/get_observed_rewards_training/", methods=["GET"])
+def get_observed_rewards_training():
     query                   = Participants.query.filter_by(prolific_id=prolific_id)    
     participants_score      = query.all()
     result                  = {}
