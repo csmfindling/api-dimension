@@ -16,16 +16,17 @@ def create_question_participant(participant_id,block_id,prolific_id):
      content     = request.json        
      participant = ParticipantsQuestionData()
 
-     participant.participant_id  = int(participant_id)
-     participant.prolific_id     = str(prolific_id)
-     participant.study_id        = str(content['study_id'])
-     participant.block_number    = int(content['block_number'])
-     participant.block_name      = str(content['block_name'])  
-     participant.question_ids    = str(content['question_ids'])
-     participant.answers         = str(content['answers'])
-     participant.datetime_start  = str(content['datetime_start'])
-     participant.datetime_end    = str(content['datetime_end'])
-     participant.completed       = content['survey_completed'] 
+     participant.participant_id          = int(participant_id)
+     participant.prolific_id             = str(prolific_id)
+     participant.study_id                = str(content['study_id'])
+     participant.block_number            = int(content['block_number'])
+     participant.block_name              = str(content['block_name'])  
+     participant.question_ids            = str(content['question_ids'])
+     participant.answers                 = str(content['answers'])
+     participant.date_time_survey_start  = str(content['date_time_survey_start'])
+     participant.date_time_survey_end    = str(content['date_time_survey_end'])
+     participant.date_time_survey_end    = str(content['date_time'])
+     participant.completed               = content['survey_completed'] 
 
      BaseObject.check_and_save(participant)
 
