@@ -25,7 +25,7 @@ def create_question_participant(participant_id,block_id,prolific_id):
      participant.answers                 = str(content['answers'])
      participant.date_time_survey_start  = str(content['date_time_survey_start'])
      participant.date_time_survey_end    = str(content['date_time_survey_end'])
-     participant.date_time_survey_end    = str(content['date_time'])
+     participant.date_time               = str(content['date_time'])
      participant.completed               = content['survey_completed'] 
 
      BaseObject.check_and_save(participant)
@@ -67,11 +67,15 @@ def get_participant_question_data(participant_id,block_id):
     arr_completed            = block.get_survey_completed()[0].replace('  ',' ')
     result['completed']      = arr_completed
     
-    arr_datetime_start       = block.get_datetime_start()
-    result['datetime_start'] = arr_datetime_start
+    arr_date_time_survey_start       = block.get_date_time_survey_start()
+    result['date_time_survey_start'] = arr_date_time_survey_start
 
-    arr_datetime_end         = block.get_datetime_end()
-    result['datetime_end']   = arr_datetime_end
+    arr_date_time_survey_end         = block.get_date_time_survey_end()
+    result['date_time_survey_end']   = arr_date_time_survey_end
+
+
+    arr_date_time         = block.get_date_time()
+    result['date_time']   = arr_date_time
     
 
     app.logger.info(result)
