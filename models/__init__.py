@@ -5,6 +5,8 @@ from models.participants_blocks import ParticipantsBlocks
 from models.blocks import Blocks
 from models.symbols import Symbols
 from models.participants import Participants
+from models.participants_question_data import ParticipantsQuestionData
+
 
 __all__ = (
     'ApiErrors',
@@ -14,4 +16,5 @@ __all__ = (
     'Blocks',
     'Symbols',
     'Participants',
+    'ParticipantsQuestionData'
 )
